@@ -25,7 +25,11 @@ public class NoteRepository {
     
     public static Note getNote(long id){
         //6. (10%) return the corresponding note with the given id
-        
+        for(Note item: notes){
+            if(item.getTitle().equals(id)){
+                return item;
+            }
+        }
         return null;
     }
     
@@ -56,5 +60,9 @@ public class NoteRepository {
         if(index!=-1){
             notes.remove(index);
         }
+    }
+
+    static void removeNotes(long id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
